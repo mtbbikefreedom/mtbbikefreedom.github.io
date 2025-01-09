@@ -16,9 +16,13 @@
 			var speechtext;
 			const params = new URLSearchParams(window.location.search);
 			speechtext = params.get("mensaje"); 
+
+			alert("1");
+			alert(speechtext);
 			
 				if (speechtext)
 				{
+					alert("2");
 				  utterance = new SpeechSynthesisUtterance(speechtext);
 				  utterance.voice = synthesis.DefaultVoice;
 				  utterance.volume = 1;
@@ -42,6 +46,7 @@
 				case 'start':
 				  break;
 				case 'end':
+					  alert("3");
 				  window.close();
 				  break;
 				case 'endEvent':
